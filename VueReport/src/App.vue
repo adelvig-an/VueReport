@@ -23,15 +23,25 @@
         </div>
       </div>
     </nav>
-    <AuthorizationComponent />
+    <EvataskComponent />
 </template>
 
-<script>
-    import AuthorizationComponent from './components/authorization-component'
+<!--<script>
+    import EvataskListComponent from './components/evatasklist-component'
     export default {
       name: 'App',
       components: {
-          AuthorizationComponent
+          EvataskListComponent
       }
+    }
+</script>-->
+
+<script>
+    import EvataskComponent from './components/evatask-component'
+    export default {
+        name: 'App',
+        components: {
+            EvataskComponent
+        }
     }
 </script>
