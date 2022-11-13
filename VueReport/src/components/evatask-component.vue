@@ -24,8 +24,90 @@
                 <h6>Объект оценки</h6>
             </div>
             <div class="col-md-2">
-                <a class="btn btn-success" style="float:right">Добавить объект</a>
+                <a class="btn btn-success" 
+                   style="float:right" 
+                   data-bs-toggle="modal" 
+                   data-bs-target="#exampleModal">
+                Добавить объект
+                </a>
             </div>
+
+            <!-- Модальное окно -->
+            <div class="modal fade" 
+                 id="exampleModal" 
+                 tabindex="-1" 
+                 data-bs-keyboard="false" 
+                 data-bs-backdrop="static" 
+                 aria-labelledby="exampleModalLabel" 
+                 aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <!--<div class="modal-header">
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
+                        </div>-->
+                        <div class="modal-body">
+                            <!-- Тип недвижимости -->
+                            <div class="row g-2">
+                                <div class="col-md-auto p-1">
+                                    <input type="radio" value="true" name="radioRealEstate" id="ResidentialRealEstate"
+                                           class="btn-check" />
+                                    <label for="ResidentialRealEstate" class="btn btn-outline-primary">Жилая недвижимость</label>
+                                </div>
+                                <div class="col-md-auto p-1">
+                                    <input type="radio" value="false" name="radioRealEstate" id="NonResidentialRealEstate"
+                                           class="btn-check" />
+                                    <label for="NonResidentialRealEstate" class="btn btn-outline-primary">Нежилая недвижимость</label>
+                                </div>
+                            </div>
+                            <!-- Тип жилой недвижимости -->
+                            <div class="row g-2">
+                                <div class="col-md-auto p-1">
+                                    <input type="radio" value="true" name="radioResidentialRealEstate" id="ResidentialPremises"
+                                           class="btn-check" />
+                                    <label for="ResidentialPremises" class="btn btn-outline-primary">Жилое помещение</label>
+                                </div>
+                                <div class="col-md-auto p-1">
+                                    <input type="radio" value="false" name="radioResidentialRealEstate" id="ResidentialBuilding"
+                                           class="btn-check" />
+                                    <label for="ResidentialBuilding" class="btn btn-outline-primary">Жилой дом</label>
+                                </div>
+                            </div>
+                            <!-- Тип жилых помещений -->
+                            <div class="row g-2">
+                                <div class="col-md-auto p-1">
+                                    <input type="radio" value="true" name="radioResidentialPremises" id="Flat"
+                                           class="btn-check" />
+                                    <label for="Flat" class="btn btn-outline-primary">Квартира</label>
+                                </div>
+                                <div class="col-md-auto p-1">
+                                    <input type="radio" value="false" name="radioResidentialPremises" id="Apartment"
+                                           class="btn-check" />
+                                    <label for="Apartment" class="btn btn-outline-primary">Апартаменты</label>
+                                </div>
+                                <div class="col-md-auto p-1">
+                                    <input type="radio" value="false" name="radioResidentialPremises" id="PartFlat"
+                                           class="btn-check" />
+                                    <label for="PartFlat" class="btn btn-outline-primary">Доля</label>
+                                </div>
+                            </div>
+                            <div class="row justify-content-end p-1">
+                                <div class="col-md-auto">
+                                    <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                                </div>
+                                <div class="col-md-auto">
+                                    <button type="button" class="btn btn-success">Добавить объект</button>
+                                </div>
+                            </div>
+                        </div>
+                        <!--<div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
+                            <button type="button" class="btn btn-primary">Добавить объект</button>
+                        </div>-->
+                    </div>
+                </div>
+            </div>
+            <!-- Модальное окно -->
+
         </div>
         <div class="row mb-2">
             <table class="table table-hover text-nowrap" style="width:100%">
