@@ -40,40 +40,45 @@
                  data-bs-backdrop="static" 
                  aria-labelledby="exampleModalLabel" 
                  aria-hidden="true">
-                <div class="modal-dialog">
+                <div class="modal-dialog modal-lg">
                     <div class="modal-content">
-                        <!--<div class="modal-header">
-                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Закрыть"></button>
-                        </div>-->
                         <div class="modal-body">
+
                             <!-- Тип недвижимости -->
-                            <div class="row g-2">
+                            <div class="row g-2" role="group">
                                 <div class="col-md-auto p-1">
-                                    <input type="radio" value="true" name="radioRealEstate" id="ResidentialRealEstate"
+                                    <input type="radio" value="ResidentialRealEstate" name="radioRealEstate" v-model="isRealEstate" id="ResidentialRealEstate"
                                            class="btn-check" />
                                     <label for="ResidentialRealEstate" class="btn btn-outline-primary">Жилая недвижимость</label>
                                 </div>
                                 <div class="col-md-auto p-1">
-                                    <input type="radio" value="false" name="radioRealEstate" id="NonResidentialRealEstate"
+                                    <input type="radio" value="NonResidentialRealEstate" name="radioRealEstate" v-model="isRealEstate" id="NonResidentialRealEstate"
                                            class="btn-check" />
                                     <label for="NonResidentialRealEstate" class="btn btn-outline-primary">Нежилая недвижимость</label>
                                 </div>
-                            </div>
-                            <!-- Тип жилой недвижимости -->
-                            <div class="row g-2">
                                 <div class="col-md-auto p-1">
+                                    <input type="radio" value="LandPlot" name="radioRealEstate" v-model="isRealEstate" id="LandPlot"
+                                           class="btn-check" />
+                                    <label for="LandPlot" class="btn btn-outline-primary">Земельный участок</label>
+                                </div>
+                            </div>
+
+                            <!-- Тип жилой недвижимости -->
+                            <div class="row g-2" role="group">
+                                <div class="col-md-auto" v-if="isRealEstate === 'ResidentialRealEstate'">
                                     <input type="radio" value="true" name="radioResidentialRealEstate" id="ResidentialPremises"
                                            class="btn-check" />
-                                    <label for="ResidentialPremises" class="btn btn-outline-primary">Жилое помещение</label>
-                                </div>
-                                <div class="col-md-auto p-1">
+                                    <label for="ResidentialPremises" style="margin-right:7px" class="btn btn-outline-primary">Жилое помещение</label>
                                     <input type="radio" value="false" name="radioResidentialRealEstate" id="ResidentialBuilding"
                                            class="btn-check" />
                                     <label for="ResidentialBuilding" class="btn btn-outline-primary">Жилой дом</label>
                                 </div>
+                                <div class="col-md-auto" v-else-if="isRealEstate === 'NonResidentialRealEstate'">Типы нежилой недвижимости</div>
+                                <div class="col-md-auto" v-else>Типы земельных участков</div>
                             </div>
+
                             <!-- Тип жилых помещений -->
-                            <div class="row g-2">
+                            <div class="row g-2" role="group">
                                 <div class="col-md-auto p-1">
                                     <input type="radio" value="true" name="radioResidentialPremises" id="Flat"
                                            class="btn-check" />
@@ -90,6 +95,7 @@
                                     <label for="PartFlat" class="btn btn-outline-primary">Доля</label>
                                 </div>
                             </div>
+
                             <div class="row justify-content-end p-1">
                                 <div class="col-md-auto">
                                     <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
@@ -99,10 +105,6 @@
                                 </div>
                             </div>
                         </div>
-                        <!--<div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Закрыть</button>
-                            <button type="button" class="btn btn-primary">Добавить объект</button>
-                        </div>-->
                     </div>
                 </div>
             </div>
@@ -136,7 +138,7 @@
                             <input type="text" class="form-control" />
                         </td>
                         <td>
-                            <select style="width:100%" class="from-select form-select-sm">
+                            <select style="width:100%" class="form-select">
                                 <option value="1">Право собственности</option>
                                 <option value="2">Право аренды</option>
                                 <option value="3">Право требования</option>
@@ -156,7 +158,7 @@
                 </label>
             </div>
             <div class="col">
-                <select class="from-select" style="width:100%">
+                <select class="form-select" style="width:100%">
                     <option value="1">Рыночная стоимость</option>
                     <option value="2">Рыночная и ликвидационная стоимость</option>
                     <option value="3">Ликвидационная стоимость</option>
@@ -180,10 +182,10 @@
         <div class="row mb-2">
             <div class="col-md-6">
                 <div class="btn-group" role="group">
-                    <input type="radio" value="true" name="radioCastomer" v-model="isCustomer" id="PrivatePerson"
+                    <input type="radio" value="PrivatePerson" name="radioCastomer" v-model="isCustomer" id="PrivatePerson"
                            class="btn-check" />
                     <label for="PrivatePerson" class="btn btn-outline-primary">Частное лицо</label>
-                    <input type="radio" value="false" name="radioCastomer" v-model="isCustomer" id="Organization"
+                    <input type="radio" value="Organization" name="radioCastomer" v-model="isCustomer" id="Organization"
                            class="btn-check" />
                     <label for="Organization" class="btn btn-outline-primary">Организация</label>
                 </div>
@@ -191,7 +193,7 @@
         </div>
         <div class="row mb-2">
             <div class="col">
-                <h5 v-if="isCustomer === 'true'">Частное лицо</h5>
+                <h5 v-if="isCustomer === 'PrivatePerson'">Частное лицо</h5>
                 <h5 v-else>Организация</h5>
             </div>
         </div>
@@ -214,7 +216,8 @@
         name: 'evatask-component',
         data() {
             return {
-                isCustomer: false
+                isCustomer: 'PrivatePerson',
+                isRealEstate: 'ResidentialRealEstate'
             }
         },
         methods: {
