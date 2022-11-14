@@ -46,54 +46,51 @@
 
                             <!-- Тип недвижимости -->
                             <div class="row g-2" role="group">
-                                <div class="col-md-auto p-1">
+                                <div class="col-md-auto">
                                     <input type="radio" value="ResidentialRealEstate" name="radioRealEstate" v-model="isRealEstate" id="ResidentialRealEstate"
                                            class="btn-check" />
-                                    <label for="ResidentialRealEstate" class="btn btn-outline-primary">Жилая недвижимость</label>
-                                </div>
-                                <div class="col-md-auto p-1">
+                                    <label for="ResidentialRealEstate" style="margin-right:7px" class="btn btn-outline-primary">Жилая недвижимость</label>
                                     <input type="radio" value="NonResidentialRealEstate" name="radioRealEstate" v-model="isRealEstate" id="NonResidentialRealEstate"
                                            class="btn-check" />
-                                    <label for="NonResidentialRealEstate" class="btn btn-outline-primary">Нежилая недвижимость</label>
-                                </div>
-                                <div class="col-md-auto p-1">
+                                    <label for="NonResidentialRealEstate" style="margin-right:7px" class="btn btn-outline-primary">Нежилая недвижимость</label>
                                     <input type="radio" value="LandPlot" name="radioRealEstate" v-model="isRealEstate" id="LandPlot"
                                            class="btn-check" />
-                                    <label for="LandPlot" class="btn btn-outline-primary">Земельный участок</label>
+                                    <label for="LandPlot" style="margin-right:7px" class="btn btn-outline-primary">Земельный участок</label>
                                 </div>
                             </div>
 
                             <!-- Тип жилой недвижимости -->
-                            <div class="row g-2" role="group">
+                            <div class="row g-2" style="margin-top: 4px" role="group">
                                 <div class="col-md-auto" v-if="isRealEstate === 'ResidentialRealEstate'">
-                                    <input type="radio" value="true" name="radioResidentialRealEstate" id="ResidentialPremises"
+                                    <input type="radio" value="ResidentialPremises" v-model="isResidentialPremises" name="radioResidentialRealEstate" id="ResidentialPremises"
                                            class="btn-check" />
                                     <label for="ResidentialPremises" style="margin-right:7px" class="btn btn-outline-primary">Жилое помещение</label>
-                                    <input type="radio" value="false" name="radioResidentialRealEstate" id="ResidentialBuilding"
+                                    <input type="radio" value="ResidentialBuilding" v-model="isResidentialPremises" name="radioResidentialRealEstate" id="ResidentialBuilding"
                                            class="btn-check" />
-                                    <label for="ResidentialBuilding" class="btn btn-outline-primary">Жилой дом</label>
+                                    <label for="ResidentialBuilding" style="margin-right:7px" class="btn btn-outline-primary">Жилой дом</label>
                                 </div>
                                 <div class="col-md-auto" v-else-if="isRealEstate === 'NonResidentialRealEstate'">Типы нежилой недвижимости</div>
-                                <div class="col-md-auto" v-else>Типы земельных участков</div>
+                                <div class="col-md-auto" v-else-if="isRealEstate === 'LandPlot'">Типы земельных участков</div>
+                                <div class="col-md-auto" v-else></div>
                             </div>
 
                             <!-- Тип жилых помещений -->
-                            <div class="row g-2" role="group">
-                                <div class="col-md-auto p-1">
-                                    <input type="radio" value="true" name="radioResidentialPremises" id="Flat"
+                            <div class="row g-2" style="margin-top: 4px" role="group">
+                                <div class="col-md-auto" v-if="isResidentialPremises === 'ResidentialPremises'">
+                                    <input type="radio" value="Flat" name="radioResidentialPremises" id="Flat"
                                            class="btn-check" />
-                                    <label for="Flat" class="btn btn-outline-primary">Квартира</label>
-                                </div>
-                                <div class="col-md-auto p-1">
-                                    <input type="radio" value="false" name="radioResidentialPremises" id="Apartment"
+                                    <label for="Flat" style="margin-right:7px" class="btn btn-outline-primary">Квартира</label>
+                                    <input type="radio" value="Apartment" name="radioResidentialPremises" id="Apartment"
                                            class="btn-check" />
-                                    <label for="Apartment" class="btn btn-outline-primary">Апартаменты</label>
-                                </div>
-                                <div class="col-md-auto p-1">
-                                    <input type="radio" value="false" name="radioResidentialPremises" id="PartFlat"
+                                    <label for="Apartment" style="margin-right:7px" class="btn btn-outline-primary">Апартаменты</label>
+                                    <input type="radio" value="PartFlat" name="radioResidentialPremises" id="PartFlat"
                                            class="btn-check" />
-                                    <label for="PartFlat" class="btn btn-outline-primary">Доля</label>
+                                    <label for="PartFlat" style="margin-right:7px" class="btn btn-outline-primary">Доля</label>
                                 </div>
+                                <div class="col-md-auto" v-else-if="isResidentialPremises === 'ResidentialBuilding'">
+                                    Типы жилых домов: Частный дом, Коттедж, Таунхаус, Дачный дом, Часть дома
+                                </div>
+                                <div class="col-md-auto" v-else></div>
                             </div>
 
                             <div class="row justify-content-end p-1">
@@ -199,11 +196,11 @@
         </div>
         <div class="row text-center justify-content-md-center">
 
-            <div class="col-lg-1">
+            <div class="col-lg-2">
                 <a class="btn btn-outline-primary" style="width:100%">Назад</a>
             </div>
             <div class="col-md-auto"></div>
-            <div class="col-lg-1">
+            <div class="col-lg-2">
                 <a class="btn btn-primary" style="width:100%">Далее</a>
             </div>
 
@@ -217,15 +214,8 @@
         data() {
             return {
                 isCustomer: 'PrivatePerson',
-                isRealEstate: 'ResidentialRealEstate'
-            }
-        },
-        methods: {
-            emailInput(value) {
-                this.email = value
-            },
-            passwordInput(value) {
-                this.password = value
+                isRealEstate: '',
+                isResidentialPremises: ''
             }
         }
     }

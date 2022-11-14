@@ -23,7 +23,7 @@
         </div>
       </div>
     </nav>
-    <EvaTaskComponent />
+    <OrganizationComponent />
 </template>
 
 <!--<script>
@@ -37,11 +37,11 @@
 </script>-->
 
 <script>
-    import EvaTaskComponent from './components/evatask-component'
+    import OrganizationComponent from './components/organization-component'
     export default {
         name: 'App',
         components: {
-            EvaTaskComponent
+            OrganizationComponent
         }
     }
 </script>
