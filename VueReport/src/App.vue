@@ -37,7 +37,7 @@
 </script>-->
 
 <script>
-    import EvaTaskComponent from './components/organization-component'
+    import EvaTaskComponent from './components/evatask-component'
     export default {
         name: 'App',
         components: {
