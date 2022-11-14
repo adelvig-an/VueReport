@@ -79,20 +79,40 @@
             </div>
         </div>
 
-        <div class="row align-items-center">
+        <div class="row">
             <div class="col-md-2">
                 Действующий на основании
             </div>
             <div class="col">
-                <select class="form-select" style="width:100%">
-                    <option value="1">Устав</option>
-                    <option value="2">Доверенность</option>
-                    <option value="3">Закон</option>
+                <select class="form-select" v-model="isSelected" style="width:100%">
+                    <option value="1">Устава</option>
+                    <option value="2">Доверенности</option>
+                    <option value="3">Закона</option>
                 </select>
+                <div class="row" v-show="isSelected === '2'">
+                    <div class="col">
+                        <label class="form-lable">
+                            Номер доверенности
+                        </label>
+                        <input type="text" class="form-control" />
+                    </div>
+                    <div class="col">
+                        <label class="form-lable">
+                            Дата доверения
+                        </label>
+                        <input type="date" class="form-control" />
+                    </div>
+                    <div class="col">
+                        <label class="form-lable">
+                            Дата окончания
+                        </label>
+                        <input type="date" class="form-control" />
+                    </div>
+                </div>
             </div>
         </div>
 
-        <div class="row">
+        <!--<div class="row">
             <div class="col offset-md-2">
                 <label class="form-lable">
                     Номер доверенности
@@ -111,7 +131,7 @@
                 </label>
                 <input type="date" class="form-control" />
             </div>
-        </div>
+        </div>-->
 
 
         <div class="row">
@@ -179,7 +199,8 @@
         name: 'organization-component',
         data() {
             return {
-                isAddressMatch: false
+                isAddressMatch: false,
+                isSelected: '1'
                 }
         }
     }

@@ -192,6 +192,10 @@
             <div class="col">
                 <h5 v-if="isCustomer === 'PrivatePerson'">Частное лицо</h5>
                 <h5 v-else>Организация</h5>
+                <!--
+                <PrivatePersonComponent v-if="isCustomer === 'PrivatePerson'" />
+                <OrganizationComponent v-else />
+                -->
             </div>
         </div>
         <div class="row text-center justify-content-md-center">
@@ -209,6 +213,8 @@
 </template>
 
 <script>
+    //import OrganizationComponent from './components/organization-component'
+    //import PrivatePersonComponent from './components/privateperson-component'
     export default {
         name: 'evatask-component',
         data() {
@@ -217,6 +223,10 @@
                 isRealEstate: '',
                 isResidentialPremises: ''
             }
-        }
+        },
+        //components:{
+        //    OrganizationComponent,
+        //    PrivatePersonComponent
+        //    }
     }
 </script>
