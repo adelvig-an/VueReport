@@ -37,7 +37,7 @@
 </script>-->
 
 <script>
-    import ObjectLocationComponent from './components/objectlocation-component'
+    import ObjectLocationComponent from './components/objectdescription-component'
     export default {
         name: 'App',
         components: {
