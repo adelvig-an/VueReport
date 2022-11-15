@@ -177,7 +177,7 @@
             </div>
         </div>
         <div class="row mb-2">
-            <div class="col-md-6">
+            <div class="col-md-3">
                 <div class="btn-group" role="group">
                     <input type="radio" value="PrivatePerson" name="radioCastomer" v-model="isCustomer" id="PrivatePerson"
                            class="btn-check" />
@@ -186,6 +186,9 @@
                            class="btn-check" />
                     <label for="Organization" class="btn btn-outline-primary">Организация</label>
                 </div>
+            </div>
+            <div class="col">
+                <a class="btn btn-primary">Выбрать заказчика</a>
             </div>
         </div>
         <div class="row mb-2">

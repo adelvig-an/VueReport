@@ -153,8 +153,8 @@
     </div>
     <div class="row">
         <div class="col">
-            <input class="form-check-input" type="checkbox" v-model="isAddressMatch" id="CheckAddress">
-            <label class="form-check-label" for="CheckAddress">
+            <input class="form-check-input" type="checkbox" v-model="isAddressMatch" id="address-match">
+            <label class="form-check-label" for="address-match">
                 Адрес фактический совподает с адресом регистрации
             </label>
         </div>
