@@ -5,7 +5,7 @@ VisualStudioVersion = 17.3.32929.385
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{54A90642-561A-4BB1-A94E-469ADEE60C69}") = "vuereport", "VueReport\vuereport.esproj", "{63FE8ADD-294B-40D9-8528-0CD78989F946}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VueReportBackend", "VueReportBackend\VueReportBackend.csproj", "{8A568535-B28B-4FA1-B4EC-B7DAC4AEC714}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VueReportBackend", "VueReportBackend\VueReportBackend.csproj", "{8A568535-B28B-4FA1-B4EC-B7DAC4AEC714}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
