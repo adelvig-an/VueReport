@@ -1048,17 +1048,16 @@
                 this.index++;
             },
             deleteRow(item) {
-
                 this.analogs.splice(item, 1);
-                this.analogs.map((a, i) =>
-                    a.id = i);
-                this.analogs.map((a, i) =>
-                    a.name = "Аналог №" + (i + 1));
-                function newIndex(analogs) {
-                    return analogs[analogs.length - 1].id;
+                this.analogs.map((a, i) => {
+                    a.id = i;
+                    a.name = "Аналог №" + (i + 1);
+                    }
+                );
+                function newIndex(arr) {
+                    return arr[arr.length - 1].id;
                 }
-                this.index = newIndex(this.analogs) + 2;
-                
+                this.index = newIndex(this.analogs) + 2;  
             }
         }
     }
