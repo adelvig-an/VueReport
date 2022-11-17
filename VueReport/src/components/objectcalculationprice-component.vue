@@ -36,10 +36,10 @@
                             <label style="font-size:12px">Объект оценки</label>
                         </div>
                         <div style="width:200px" v-for="analog in analogs" :key="analog.id">
-                            <div>
+
                                 <label style="font-size:12px">{{ analog.name }}</label>&nbsp;
                                 <a href="#" @click="deleteRow(analog.id)" style="color:red"><b>X</b></a>
-                            </div>
+
                         </div>
                         <!--<div style="width:200px">
                         <label style="font-size:12px">Аналог №2</label>
@@ -65,15 +65,17 @@
                                         <div style="width:200px">
                                             <input class="form-control" style="font-size:12px; width:150px" type="text" value="-" aria-label="-" disabled readonly>
                                         </div>
-                                        <div style="width:200px">
+                                        <div style="width:200px" v-for="analog in analogs" :key="analog.id">
+
+                                                <input type="text" class="form-control" v-model="analog.linkTo" :id="analog.id" style="font-size:12px; width:150px" />
+
+                                        </div>
+                                        <!--<div style="width:200px">
                                             <input type="text" class="form-control" style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
                                             <input type="text" class="form-control" style="font-size:12px; width:150px" />
-                                        </div>
-                                        <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
-                                        </div>
+                                        </div>-->
                                     </div>
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
                                         <div style="width:200px">
@@ -1034,6 +1036,7 @@
         name: 'objectcalculationprice-component',
         data() {
             return {
+                message: '',
                 index: 1,
                 analogs: []
             }
@@ -1043,21 +1046,25 @@
             {
                 this.analogs.push({
                     id: this.index - 1,
-                    name: 'Аналог №' + this.index,
+                    name: 'Аналог № ' + this.index,
+                    linkTo:'',
                 });
                 this.index++;
             },
             deleteRow(item) {
                 this.analogs.splice(item, 1);
+
+                this.index--;
+
                 this.analogs.map((a, i) => {
-                    a.id = i;
-                    a.name = "Аналог №" + (i + 1);
+                    if (i != a.id) {
+                        console.log("Строка изменяемого объекта", i)
+                        console.log("ID изменяемого объекта", a.id)
+
+                        a.id = i;
+                        a.name = "Аналог № " + (i + 1);
                     }
-                );
-                function newIndex(arr) {
-                    return arr[arr.length - 1].id;
-                }
-                this.index = newIndex(this.analogs) + 2;  
+                });
             }
         }
     }
