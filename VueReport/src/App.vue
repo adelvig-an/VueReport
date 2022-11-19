@@ -23,11 +23,11 @@
             </div>
         </div>
     </nav>
-    <!--<EvaTaskComponent />-->
-    <EvaTaskListComponent />
+    <EvaTaskComponent />
+    <!--<EvaTaskListComponent />-->
 </template>
 
-<script>
+<!--<script>
     import EvaTaskListComponent from './components/evatasklist-component'
     export default {
         name: 'App',
@@ -35,9 +35,9 @@
             EvaTaskListComponent
         }
     }
-</script>
+</script>-->
 
-<!--<script>
+<script>
     import EvaTaskComponent from './components/evatask-component'
     export default {
         name: 'App',
@@ -45,7 +45,7 @@
             EvaTaskComponent
         }
     }
-</script>-->
+</script>
 
 <!--<script>
     import ObjectLocationComponent from './components/objectcalculationprice-component'

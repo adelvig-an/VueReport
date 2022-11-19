@@ -101,6 +101,7 @@
                                     <button type="button" class="btn btn-success">Добавить объект</button>
                                 </div>
                             </div>
+
                         </div>
                     </div>
                 </div>
