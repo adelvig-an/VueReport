@@ -13,7 +13,7 @@
         <div class="row">
             <div class="col-lg-12">
                 <div class="table-responsive">
-                    <tabel class="table project-list-table table-nowrap align-middle table-borderless">
+                    <table class="table project-list-table table-nowrap align-middle table-borderless" style="width:100%">
                         <thead>
                             <tr>
                                 <th scope="col">Номер заявки</th>
@@ -45,10 +45,12 @@
                                 <td>
                                     Подписан
                                 </td>
-                                <td></td>
+                                <td>
+                                    <a class="btn btn-outline-danger">X</a>
+                                </td>
                             </tr>
                         </tbody>
-                    </tabel>
+                    </table>
                 </div>
             </div>
         </div>

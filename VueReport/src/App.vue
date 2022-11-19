@@ -23,8 +23,19 @@
             </div>
         </div>
     </nav>
-    <ObjectLocationComponent />
+    <!--<EvaTaskComponent />-->
+    <EvaTaskListComponent />
 </template>
+
+<script>
+    import EvaTaskListComponent from './components/evatasklist-component'
+    export default {
+        name: 'App',
+        components: {
+            EvaTaskListComponent
+        }
+    }
+</script>
 
 <!--<script>
     import EvaTaskComponent from './components/evatask-component'
@@ -36,7 +47,7 @@
     }
 </script>-->
 
-<script>
+<!--<script>
     import ObjectLocationComponent from './components/objectcalculationprice-component'
     export default {
         name: 'App',
@@ -44,4 +55,4 @@
             ObjectLocationComponent
         }
     }
-</script>
+</script>-->

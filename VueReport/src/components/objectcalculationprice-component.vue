@@ -37,78 +37,65 @@
                         </div>
                         <div style="width:200px" v-for="analog in analogs" :key="analog.id">
 
-                                <label style="font-size:12px">{{ analog.name }}</label>&nbsp;
-                                <a href="#" @click="deleteRow(analog.id)" style="color:red"><b>X</b></a>
+                            <label style="font-size:12px">{{ analog.name }}</label>&nbsp;
+                            <a href="#" @click="deleteRow(analog.id)" style="color:red"><b>X</b></a>
 
                         </div>
-                        <!--<div style="width:200px">
-                        <label style="font-size:12px">Аналог №2</label>
-                    </div>
-                    <div style="width:200px">
-                        <label style="font-size:12px">Аналог №3</label>
-                    </div>-->
                     </div>
 
                     <div class="accordion" id="accordionPanelsStayOpenExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true" aria-controls="panelsStayOpen-collapseOne">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseOne" aria-expanded="true"
+                                    aria-controls="panelsStayOpen-collapseOne">
                                     Общая информация
                                 </button>
                             </h2>
-                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingOne">
+                            <div id="panelsStayOpen-collapseOne" class="accordion-collapse collapse show"
+                                aria-labelledby="panelsStayOpen-headingOne">
                                 <div class="accordion-body">
-                                    <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
-                                        <div style="width:200px">
-                                            <label style="font-size:12px">Источник информации</label>
+                                    <div style="display:flex;">
+                                        <div style=" width: 200px">
+                                            <div style="margin-top: 3.5px; margin-bottom: 3.5px;">
+                                                <label style="font-size:12px">Источник информации</label>
+                                            </div>
+                                            <div style="margin-top: 3.5px; margin-bottom: 3.5px;">
+                                                <label style="font-size:12px">Телефон</label>
+                                            </div>
+                                            <div style="margin-top: 3.5px; margin-bottom: 3.5px;">
+                                                <label style="font-size:12px">Скриншоты страниц объявлений</label>
+                                            </div>
                                         </div>
-                                        <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="-" aria-label="-" disabled readonly>
+                                        <div style=" width: 200px">
+                                            <div style="margin-top: 3.5px; margin-bottom: 3.5px;">
+                                                <input class="form-control" style="font-size:12px; width:150px"
+                                                    type="text" value="-" aria-label="-" disabled readonly>
+                                            </div>
+                                            <div style="margin-top: 3.5px; margin-bottom: 3.5px;">
+                                                <input class="form-control" style="font-size:12px; width:150px"
+                                                    type="text" value="-" aria-label="-" disabled readonly>
+                                            </div>
+                                            <div style="margin-top: 3.5px; margin-bottom: 3.5px;">
+                                                <input class="form-control"
+                                                    style="font-size: 12px; width: 150px; height: 150px" type="text"
+                                                    value="-" aria-label="-" disabled readonly>
+                                            </div>
                                         </div>
-                                        <div style="width:200px" v-for="analog in analogs" :key="analog.id">
-
-                                                <input type="text" class="form-control" v-model="analog.linkTo" :id="analog.id" style="font-size:12px; width:150px" />
-
-                                        </div>
-                                        <!--<div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
-                                        </div>
-                                        <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
-                                        </div>-->
-                                    </div>
-                                    <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
-                                        <div style="width:200px">
-                                            <label style="font-size:12px">Телефон</label>
-                                        </div>
-                                        <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="-" aria-label="-" disabled readonly>
-                                        </div>
-                                        <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
-                                        </div>
-                                        <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
-                                        </div>
-                                        <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
-                                        </div>
-                                    </div>
-                                    <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
-                                        <div style="width:200px">
-                                            <label style="font-size:12px">Скриншоты страниц объявлений</label>
-                                        </div>
-                                        <div style="width:200px">
-                                            <input class="form-control" style="font-size: 12px; width: 150px; height: 150px" type="text" value="-" aria-label="-" disabled readonly>
-                                        </div>
-                                        <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px; height:150px" />
-                                        </div>
-                                        <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size: 12px; width: 150px; height: 150px" />
-                                        </div>
-                                        <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size: 12px; width: 150px; height: 150px" />
+                                        <div style=" width: 200px" v-for="analog in analogs" :key="analog.id">
+                                            <div style="margin-top: 3.5px; margin-bottom: 3.5px;">
+                                                <input type="text" class="form-control" v-model="analog.linkTo"
+                                                    :id="analog.id" style="font-size:12px; width:150px" />
+                                            </div>
+                                            <div style="margin-top: 3.5px; margin-bottom: 3.5px;">
+                                                <input type="text" class="form-control" v-model="analog.contactPhone"
+                                                    :id="analog.id" style="font-size:12px; width:150px" />
+                                            </div>
+                                            <div style="margin-top: 3.5px; margin-bottom: 3.5px;">
+                                                <input type="text" class="form-control"
+                                                    style="font-size: 12px; width: 150px; height: 150px"
+                                                    v-model="analog.screenshotOffer" :id="analog.id" />
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -117,27 +104,34 @@
 
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="panelsStayOpen-headingOne">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true" aria-controls="panelsStayOpen-collapseTwo">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseTwo" aria-expanded="true"
+                                    aria-controls="panelsStayOpen-collapseTwo">
                                     Параметры сделки
                                 </button>
                             </h2>
-                            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingTwo">
+                            <div id="panelsStayOpen-collapseTwo" class="accordion-collapse collapse show"
+                                aria-labelledby="panelsStayOpen-headingTwo">
                                 <div class="accordion-body">
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
                                         <div style="width:200px">
                                             <label style="font-size:12px">Цена предложения, руб.</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="0" aria-label="0" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="0" aria-label="0" disabled readonly>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
                                     <div style="display: flex; margin-top: 3.5px; margin-bottom: 3.5px">
@@ -145,16 +139,20 @@
                                             <label style="font-size:12px">Стоимость объекта за кв.м., руб.</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="0" aria-label="0" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="0" aria-label="0" disabled readonly>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
@@ -162,7 +160,8 @@
                                             <label style="font-size:12px">Торг</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="-" aria-label="-" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="-" aria-label="-" disabled readonly>
                                         </div>
                                         <div style="width:200px">
                                             <select class="form-select" style="font-size:12px; width:150px"></select>
@@ -182,13 +181,16 @@
                                             <label style="font-size:12px">Корректировка, %</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
@@ -196,16 +198,20 @@
                                             <label style="font-size:12px">Дата предложения</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="-" aria-label="-" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="-" aria-label="-" disabled readonly>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="date" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="date" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="date" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="date" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="date" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="date" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
@@ -216,13 +222,16 @@
                                             <label style="font-size:12px">Корректировка, %</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
                                 </div>
@@ -231,11 +240,14 @@
 
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="panelsStayOpen-headingThree">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true" aria-controls="panelsStayOpen-collapseThree">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseThree" aria-expanded="true"
+                                    aria-controls="panelsStayOpen-collapseThree">
                                     Параметры местоположения
                                 </button>
                             </h2>
-                            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingThree">
+                            <div id="panelsStayOpen-collapseThree" class="accordion-collapse collapse show"
+                                aria-labelledby="panelsStayOpen-headingThree">
                                 <div class="accordion-body">
 
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
@@ -243,16 +255,21 @@
                                             <label style="font-size:12px">Регион</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="Краснодарский край" aria-label="Краснодарский край" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="Краснодарский край" aria-label="Краснодарский край" disabled
+                                                readonly>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
@@ -260,16 +277,21 @@
                                             <label style="font-size:12px">Адрес</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="г. Краснодар, ул. Каляева, 200" aria-label="г. Краснодар, ул. Каляева, 200" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="г. Краснодар, ул. Каляева, 200"
+                                                aria-label="г. Краснодар, ул. Каляева, 200" disabled readonly>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
@@ -280,13 +302,16 @@
                                             <label style="font-size:12px">Корректировка, %</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
@@ -294,16 +319,20 @@
                                             <label style="font-size:12px">Метро/ж.д. станция</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="Водоканал" aria-label="Водоканал" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="Водоканал" aria-label="Водоканал" disabled readonly>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
@@ -311,16 +340,20 @@
                                             <label style="font-size:12px">Время до метро/ж.д. станции</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="5 мин" aria-label="5 мин" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="5 мин" aria-label="5 мин" disabled readonly>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
@@ -331,13 +364,16 @@
                                             <label style="font-size:12px">Корректировка, %</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
                                 </div>
@@ -346,11 +382,14 @@
 
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="panelsStayOpen-headingFour">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="true" aria-controls="panelsStayOpen-collapseFour">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseFour" aria-expanded="true"
+                                    aria-controls="panelsStayOpen-collapseFour">
                                     Параметры дома
                                 </button>
                             </h2>
-                            <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingFour">
+                            <div id="panelsStayOpen-collapseFour" class="accordion-collapse collapse show"
+                                aria-labelledby="panelsStayOpen-headingFour">
                                 <div class="accordion-body">
 
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
@@ -358,7 +397,8 @@
                                             <label style="font-size:12px">Материал стен</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="Кирпич" aria-label="Кирпич" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="Кирпич" aria-label="Кирпич" disabled readonly>
                                         </div>
                                         <div style="width:200px">
                                             <select class="form-select" style="font-size:12px; width:150px"></select>
@@ -378,13 +418,16 @@
                                             <label style="font-size:12px">Корректировка, %</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
@@ -392,16 +435,20 @@
                                             <label style="font-size:12px">Этаж расположения объекта</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="6" aria-label="6" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="6" aria-label="6" disabled readonly>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
@@ -409,16 +456,20 @@
                                             <label style="font-size:12px">Этажность дома</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="25" aria-label="25" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="25" aria-label="25" disabled readonly>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
@@ -429,13 +480,16 @@
                                             <label style="font-size:12px">Корректировка, %</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
@@ -443,7 +497,8 @@
                                             <label style="font-size:12px">Благоустройство дома</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="-" aria-label="-" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="-" aria-label="-" disabled readonly>
                                         </div>
                                         <div style="width:200px">
                                             <select class="form-select" style="font-size:12px; width:150px"></select>
@@ -463,13 +518,16 @@
                                             <label style="font-size:12px">Корректировка, %</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
@@ -477,7 +535,8 @@
                                             <label style="font-size:12px">Состояние дома</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="Хорошее" aria-label="Хорошее" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="Хорошее" aria-label="Хорошее" disabled readonly>
                                         </div>
                                         <div style="width:200px">
                                             <select class="form-select" style="font-size:12px; width:150px"></select>
@@ -497,13 +556,16 @@
                                             <label style="font-size:12px">Корректировка, %</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
@@ -511,7 +573,9 @@
                                             <label style="font-size:12px">Инжинерные системы</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="Электроснабжение, канализация, ХВС и ГВС" aria-label="Электроснабжение, канализация, ХВС и ГВС" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="Электроснабжение, канализация, ХВС и ГВС"
+                                                aria-label="Электроснабжение, канализация, ХВС и ГВС" disabled readonly>
                                         </div>
                                         <div style="width:200px">
                                             <select class="form-select" style="font-size:12px; width:150px"></select>
@@ -531,13 +595,16 @@
                                             <label style="font-size:12px">Корректировка, %</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
 
@@ -549,11 +616,14 @@
                     <div class="accordion" id="accordionPanelsStayOpenExample">
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="panelsStayOpen-headingFive">
-                                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="true" aria-controls="panelsStayOpen-collapseFive">
+                                <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                                    data-bs-target="#panelsStayOpen-collapseFive" aria-expanded="true"
+                                    aria-controls="panelsStayOpen-collapseFive">
                                     Параметры объекта оценки
                                 </button>
                             </h2>
-                            <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-headingFive">
+                            <div id="panelsStayOpen-collapseFive" class="accordion-collapse collapse show"
+                                aria-labelledby="panelsStayOpen-headingFive">
                                 <div class="accordion-body">
 
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
@@ -561,16 +631,20 @@
                                             <label style="font-size:12px">Количество комнат</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="3" aria-label="3" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="3" aria-label="3" disabled readonly>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
@@ -581,13 +655,16 @@
                                             <label style="font-size:12px">Корректировка, %</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
@@ -595,16 +672,20 @@
                                             <label style="font-size:12px">Общая площадь, кв.м.</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="73,5" aria-label="73,5" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="73,5" aria-label="73,5" disabled readonly>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
@@ -615,13 +696,16 @@
                                             <label style="font-size:12px">Корректировка, %</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
@@ -629,16 +713,20 @@
                                             <label style="font-size:12px">Жилая площадь, кв.м.</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="54" aria-label="54" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="54" aria-label="54" disabled readonly>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
@@ -649,13 +737,16 @@
                                             <label style="font-size:12px">Корректировка, %</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
@@ -663,16 +754,20 @@
                                             <label style="font-size:12px">Площадь кухни</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="10" aria-label="10" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="10" aria-label="10" disabled readonly>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
@@ -683,13 +778,16 @@
                                             <label style="font-size:12px">Корректировка, %</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
@@ -697,7 +795,8 @@
                                             <label style="font-size:12px">Наличие балкона/лоджии</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="Лоджия" aria-label="Лоджия" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="Лоджия" aria-label="Лоджия" disabled readonly>
                                         </div>
                                         <div style="width:200px">
                                             <select class="form-select" style="font-size:12px; width:150px"></select>
@@ -717,13 +816,16 @@
                                             <label style="font-size:12px">Корректировка, %</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
 
@@ -732,7 +834,9 @@
                                             <label style="font-size:12px">Вид из окна</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="Во двор и на улицу" aria-label="Во двор и на улицу" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="Во двор и на улицу" aria-label="Во двор и на улицу" disabled
+                                                readonly>
                                         </div>
                                         <div style="width:200px">
                                             <select class="form-select" style="font-size:12px; width:150px">
@@ -764,13 +868,16 @@
                                             <label style="font-size:12px">Корректировка, %</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
 
@@ -779,16 +886,20 @@
                                             <label style="font-size:12px">Высота потолков, м.</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="2.7" aria-label="2.7" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="2.7" aria-label="2.7" disabled readonly>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
@@ -799,13 +910,16 @@
                                             <label style="font-size:12px">Корректировка, %</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
 
@@ -814,7 +928,8 @@
                                             <label style="font-size:12px">Санузел</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="Раздельный" aria-label="Раздельный" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="Раздельный" aria-label="Раздельный" disabled readonly>
                                         </div>
                                         <div style="width:200px">
                                             <select class="form-select" style="font-size:12px; width:150px"></select>
@@ -834,13 +949,16 @@
                                             <label style="font-size:12px">Корректировка, %</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
 
@@ -849,7 +967,8 @@
                                             <label style="font-size:12px">Качество отделки</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="Хорошее" aria-label="Хорошее" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="Хорошее" aria-label="Хорошее" disabled readonly>
                                         </div>
                                         <div style="width:200px">
                                             <select class="form-select" style="font-size:12px; width:150px"></select>
@@ -869,13 +988,16 @@
                                             <label style="font-size:12px">Корректировка, %</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
 
@@ -884,7 +1006,8 @@
                                             <label style="font-size:12px">Наличие мебели</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="-" aria-label="-" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="-" aria-label="-" disabled readonly>
                                         </div>
                                         <div style="width:200px">
                                             <select class="form-select" style="font-size:12px; width:150px"></select>
@@ -904,13 +1027,16 @@
                                             <label style="font-size:12px">Корректировка, %</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                         <div style="width:200px">
-                                            <input type="text" class="form-control" style="font-size:12px; width:150px" />
+                                            <input type="text" class="form-control"
+                                                style="font-size:12px; width:150px" />
                                         </div>
                                     </div>
 
@@ -923,41 +1049,52 @@
                         <div class="accordion-item">
                             <h2 class="accordion-header" id="panelsStayOpen-1">
                             </h2>
-                            <div id="panelsStayOpen-1" class="accordion-collapse collapse show" aria-labelledby="panelsStayOpen-1">
+                            <div id="panelsStayOpen-1" class="accordion-collapse collapse show"
+                                aria-labelledby="panelsStayOpen-1">
                                 <div class="accordion-body">
 
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
                                         <div style="width:200px">
-                                            <label style="font-size:12px">Итоговое значение относительных корректировок, %</label>
+                                            <label style="font-size:12px">Итоговое значение относительных корректировок,
+                                                %</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="-" aria-label="-" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="-" aria-label="-" disabled readonly>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="0" aria-label="0" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="0" aria-label="0" disabled readonly>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="0" aria-label="0" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="0" aria-label="0" disabled readonly>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="0" aria-label="0" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="0" aria-label="0" disabled readonly>
                                         </div>
                                     </div>
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
                                         <div style="width:200px">
-                                            <label style="font-size:12px">Скорректированная цена объекта аналога (руб./кв.м.)</label>
+                                            <label style="font-size:12px">Скорректированная цена объекта аналога
+                                                (руб./кв.м.)</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="-" aria-label="-" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="-" aria-label="-" disabled readonly>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="0" aria-label="0" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="0" aria-label="0" disabled readonly>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="0" aria-label="0" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="0" aria-label="0" disabled readonly>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="0" aria-label="0" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="0" aria-label="0" disabled readonly>
                                         </div>
                                     </div>
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
@@ -965,16 +1102,20 @@
                                             <label style="font-size:12px">Валовая коррекция</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="-" aria-label="-" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="-" aria-label="-" disabled readonly>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="0" aria-label="0" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="0" aria-label="0" disabled readonly>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="0" aria-label="0" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="0" aria-label="0" disabled readonly>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="0" aria-label="0" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="0" aria-label="0" disabled readonly>
                                         </div>
                                     </div>
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
@@ -982,16 +1123,20 @@
                                             <label style="font-size:12px">Весовой коэффициент</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="-" aria-label="-" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="-" aria-label="-" disabled readonly>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="0" aria-label="0" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="0" aria-label="0" disabled readonly>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="0" aria-label="0" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="0" aria-label="0" disabled readonly>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="0" aria-label="0" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="0" aria-label="0" disabled readonly>
                                         </div>
                                     </div>
                                     <div style="display:flex; margin-top: 3.5px; margin-bottom: 3.5px">
@@ -999,16 +1144,20 @@
                                             <label style="font-size:12px">Взвешенная стоимость за 1 кв.м., руб.</label>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="-" aria-label="-" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="-" aria-label="-" disabled readonly>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="0" aria-label="0" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="0" aria-label="0" disabled readonly>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="0" aria-label="0" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="0" aria-label="0" disabled readonly>
                                         </div>
                                         <div style="width:200px">
-                                            <input class="form-control" style="font-size:12px; width:150px" type="text" value="0" aria-label="0" disabled readonly>
+                                            <input class="form-control" style="font-size:12px; width:150px" type="text"
+                                                value="0" aria-label="0" disabled readonly>
                                         </div>
                                     </div>
 
@@ -1032,42 +1181,43 @@
 </template>
 
 <script>
-    export default {
-        name: 'objectcalculationprice-component',
-        data() {
-            return {
-                message: '',
-                index: 1,
-                analogs: []
-            }
+export default {
+    name: 'objectcalculationprice-component',
+    data() {
+        return {
+            message: '',
+            index: 1,
+            analogs: []
+        }
+    },
+    methods: {
+        addRow() {
+            this.analogs.push({
+                id: this.index - 1,
+                name: 'Аналог № ' + this.index,
+                linkTo: '',
+                contactPhone: '',
+                screenshotOffer: '',
+            });
+            this.index++;
         },
-        methods: {
-            addRow()
-            {
-                this.analogs.push({
-                    id: this.index - 1,
-                    name: 'Аналог № ' + this.index,
-                    linkTo:'',
-                });
-                this.index++;
-            },
-            deleteRow(item) {
-                this.analogs.splice(item, 1);
+        deleteRow(item) {
+            this.analogs.splice(item, 1);
 
-                this.index--;
+            this.index--;
 
-                this.analogs.map((a, i) => {
-                    if (i != a.id) {
-                        console.log("Строка изменяемого объекта", i)
-                        console.log("ID изменяемого объекта", a.id)
+            this.analogs.map((a, i) => {
+                if (i != a.id) {
+                    console.log("Строка изменяемого объекта", i)
+                    console.log("ID изменяемого объекта", a.id)
 
-                        a.id = i;
-                        a.name = "Аналог № " + (i + 1);
-                    }
-                });
-            }
+                    a.id = i;
+                    a.name = "Аналог № " + (i + 1);
+                }
+            });
         }
     }
+}
 </script>
 
 

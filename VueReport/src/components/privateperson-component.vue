@@ -68,12 +68,12 @@
             <label class="form-lable">
                 Адрес регистрации
             </label>
-            <input type="text" class="form-control" />
+            <input type="text" v-model="AddressRegistration" class="form-control" />
         </div>
     </div>
     <div class="row">
         <div class="col">
-            <input class="form-check-input" type="checkbox" v-model="isAddressMatch" id="address-match">
+            <input class="form-check-input" type="checkbox" v-model="isAddressMatch" @click="AddressMatch" id="address-match">&nbsp;
             <label class="form-check-label" for="address-match">
                 Адрес фактический совподает с адресом регистрации
             </label>
@@ -84,7 +84,7 @@
             <label class="form-lable">
                 Адрес фактический
             </label>
-            <input type="text" class="form-control" :disabled="isAddressMatch" />
+            <input type="text" v-model="AddressActual" class="form-control" :disabled="isAddressMatch" />
         </div>
     </div>
 </template>
@@ -94,8 +94,20 @@
         name: 'organization-component',
         data() {
             return {
-                isAddressMatch: false
+                isAddressMatch: false,
+                AddressRegistration: '',
+                AddressActual: '',
                 }
+        },
+        methods: {
+            AddressMatch() {
+                if (this.isAddressMatch != true) {
+                    this.AddressActual = this.AddressRegistration;
+                }
+                else{
+                    this.AddressActual = "";
+                }
+            },
         }
     }
 </script>
