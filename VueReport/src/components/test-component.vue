@@ -8,14 +8,14 @@
                         <input type="text" v-model="login" />
                     </lable>
                 </div>
-                <div class="col-md-6">login: {{ login }}</div>
+                <div class="col-md-6" >login: {{ user.login }}</div>
                 <div class="col-md-6">
                     <label>
                         Введите пароль:
                         <input type="password" v-model="password" />
                     </label>
                 </div>
-                <div class="col-md-6">password: {{ password }}</div>
+                <div class="col-md-6">password: {{ user.password }}</div>
             </div>
         </div>
     </div>

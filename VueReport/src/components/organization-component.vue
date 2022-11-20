@@ -164,7 +164,7 @@
             <label class="form-lable">
                 Адрес фактический
             </label>
-            <input type="text" v-model="AddressActual" class="form-control" :disabled="isAddressMatch" />
+            <input type="text" :value="isAddressMatch ? AddressActual = AddressRegistration : AddressActual = null" class="form-control" :disabled="isAddressMatch" />
         </div>
     </div>
 </template>
@@ -175,18 +175,10 @@
         data() {
             return {
                 isAddressMatch: false,
-                isSelected: '1'
-                }
+                isSelected: '1',
+                AddressRegistration: '',
+                AddressActual: '',
+            }
         },
-        methods: {
-            AddressMatch() {
-                if (this.isAddressMatch != true) {
-                    this.AddressActual = this.AddressRegistration;
-                }
-                else {
-                    this.AddressActual = "";
-                }
-            },
-        }
     }
 </script>
