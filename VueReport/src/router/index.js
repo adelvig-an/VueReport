@@ -2,6 +2,7 @@ import { createWebHistory, createRouter } from "vue-router";
 
 import MainPage from '../pages/MainPage.vue'
 import SecondPage from '../pages/SecondPage.vue'
+import NotFound from '../pages/NotFound.vue'
 
 const routes = [
     {
@@ -13,6 +14,10 @@ const routes = [
         path: '/second',
         name: 'SecondPage',
         component: SecondPage,
+    },
+    {
+        path: "/:catchAll(.*)",
+        component: NotFound,
     },
 ];
 
