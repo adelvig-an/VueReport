@@ -23,14 +23,12 @@
 </template>
 
 <script lang="js">
-
     export default {
         name: 'test-component',
         data() {
             return {
                 login: '',
                 password: '',
-
             }
         },
         created() {
@@ -42,14 +40,14 @@
         },
         methods: {
             fetchData() {
-
                 fetch('user')
                     .then(r => r.json())
                     .then(json => {
                         this.login = json.login;
                         this.password = json.password;
                         return;
-                    })
+                    }
+                )
             }
         },
     }
