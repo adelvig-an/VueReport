@@ -27,15 +27,15 @@
     <!--<EvaTaskListComponent />-->
 </template>
 
-<!--<script>
-    import EvaTaskComponent from './components/test-component'
+<script>
+    import EvaTaskComponent from './components/test-component.vue'
     export default {
         name: 'App',
         components: {
             EvaTaskComponent
         }
     }
-</script>-->
+</script>
 
 
 <!--<script>
@@ -48,7 +48,7 @@
     }
 </script>-->
 
-<script>
+<!--<script>
     import EvaTaskComponent from './components/evatask-component'
     export default {
         name: 'App',
@@ -56,7 +56,7 @@
             EvaTaskComponent
         }
     }
-</script>
+</script>-->
 
 <!--<script>
     import ObjectLocationComponent from './components/objectcalculationprice-component'
