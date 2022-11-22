@@ -32,22 +32,22 @@ builder.Services.AddCors(option =>
     });
 });
 
-var scope = builder.Services.BuildServiceProvider().CreateScope();
-
 IConfiguration Configuration = builder.Configuration;
 
 builder.Services.AddApplication();
 builder.Services.AddPersistence(Configuration);
 
-
-var servicesProvider = scope.ServiceProvider;
-try
+using (var scope = builder.Services.BuildServiceProvider().CreateScope())
 {
-    var context = servicesProvider.GetRequiredService<ApplicationDbContext>();
-    DbInitializer.Initializer(context);
+    var servicesProvider = scope.ServiceProvider;
+    try
+    {
+        var context = servicesProvider.GetRequiredService<ApplicationDbContext>();
+        DbInitializer.Initializer(context);
+    }
+    catch (Exception exception)
+    { }
 }
-catch (Exception exception)
-{ }
 
 var app = builder.Build();
 
