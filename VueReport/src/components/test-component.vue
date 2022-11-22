@@ -40,7 +40,7 @@
         },
         methods: {
             fetchData() {
-                fetch('user')
+                fetch('/user')
                     .then(r => r.json())
                     .then(json => {
                         this.login = json.login;

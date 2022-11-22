@@ -20,8 +20,8 @@ namespace VueReportBackend.Controllers
             return new User 
             { 
                 Id= 1,
-                Login = "MyLogin",
-                Password = "MyPassword"
+                Login = "Я из бэка берусь",
+                Password = "Тут мой пароль"
             };
         }
     }

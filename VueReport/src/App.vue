@@ -26,12 +26,12 @@
             </div>
         </div>
     </nav>
-    <router-view />
-    <!--<EvaTaskComponent />-->
+    <!--<router-view />-->
+    <EvaTaskComponent />
     <!--<EvaTaskListComponent />-->
 </template>
 
-<!--<script>
+<script>
     import EvaTaskComponent from './components/test-component.vue'
     export default {
         name: 'App',
@@ -39,13 +39,13 @@
             EvaTaskComponent
         }
     }
-</script>-->
+</script>
 
-<script>
+<!--<script>
     export default {
         name: 'App',
     }
-</script>
+</script>-->
 
 
 <!--<script>
