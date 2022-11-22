@@ -1,7 +1,7 @@
-﻿using System.Reflection;
-using AutoMapper;
+﻿using AutoMapper;
+using System.Reflection;
 
-namespace Model.Common.Mappings
+namespace BussinesLayer.Common.Mappings
 {
     public class AssemblyMappingProfile : Profile
     {
@@ -11,16 +11,16 @@ namespace Model.Common.Mappings
         private void AssemblyMappingsFromAssemby(Assembly assembly)
         {
             var types = assembly.GetExportedTypes()
-                .Where(type => type.GetInterface()
-                .Any(i => i.IsGenericType &&
-                i.GetGenericTypeDefinition() = typeof(IMapWith<>)))
+                .Where(type => type.GetInterfaces()
+                .Any(i => i.IsGenericType && 
+                i.GetGenericTypeDefinition() == typeof(IMapWith<>)))
                 .ToList();
 
-            foreach (var type in types) 
+            foreach (var type in types)
             {
                 var instance = Activator.CreateInstance(type);
                 var methodInfo = type.GetMethod("Mapping");
-                methodInfo.Invoke(instance, new object[] { this });
+                methodInfo?.Invoke(instance, new object[] { this });
             }
         }
     }

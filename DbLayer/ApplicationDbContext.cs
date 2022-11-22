@@ -5,9 +5,10 @@ using Model;
 
 namespace DbLayer
 {
-    public class ApplicationDbContext : DbContext, IUsersDbContext
+    public class ApplicationDbContext : DbContext, IUsersDbContext, IReportDbContext
     {
         public DbSet<User> Users { get; set; }
+        public DbSet<Report> Reports { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) 
             : base(options) { }

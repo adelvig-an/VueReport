@@ -1,10 +1,10 @@
 ﻿using AutoMapper;
 
-namespace Model.Common.Mappings
+namespace BussinesLayer.Common.Mappings
 {
     public interface IMapWith<T>
     {
-        void Mapping (Profile profile) =>
+        void Mapping(Profile profile) =>
             profile.CreateMap(typeof(T), GetType());
     }
 }

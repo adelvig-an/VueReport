@@ -3,9 +3,9 @@ using Model;
 
 namespace DbLayer.Interfaces
 {
-    public interface IUsersDbContext
+    public interface IReportDbContext
     {
-        DbSet<User> Users { get; set; }
+        DbSet<Report> Reports { get; set; }
         Task<int> SaveChangesAsync(CancellationToken cancellationToken);
     }
 }
