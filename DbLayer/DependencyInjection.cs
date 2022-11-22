@@ -15,7 +15,6 @@ namespace DbLayer
             {
                 options.UseSqlite(connectionString);
             });
-            //services.AddScoped<IUsersDbContext>(provider => provider.GetService<ApplicationDbContext>());
             services.AddScoped<IReportDbContext>(provider => provider.GetService<ApplicationDbContext>());
 
             return services;

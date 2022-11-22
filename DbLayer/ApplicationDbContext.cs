@@ -5,9 +5,8 @@ using Model;
 
 namespace DbLayer
 {
-    public class ApplicationDbContext : DbContext, IUsersDbContext, IReportDbContext
+    public class ApplicationDbContext : DbContext, IReportDbContext
     {
-        public DbSet<User> Users { get; set; }
         public DbSet<Report> Reports { get; set; }
 
         public ApplicationDbContext(DbContextOptions<ApplicationDbContext> options) 
@@ -15,7 +14,7 @@ namespace DbLayer
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
-            modelBuilder.ApplyConfiguration(new UserConfiguration());
+            modelBuilder.ApplyConfiguration(new ReportConfiguration());
             base.OnModelCreating(modelBuilder);
         }
     }
