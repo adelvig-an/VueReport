@@ -8,13 +8,7 @@ using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
-IConfiguration Configuration = builder.Configuration;
-
 // Add services to the container.
-builder.Services.AddDbContext<ApplicationDbContext>(option =>
-    option.UseSqlite(builder.Configuration.GetConnectionString("SQLiteDb")
-    ?? throw new InvalidOperationException("Connection string 'ApplicationDbContext' not found.")));
-
 builder.Services.AddControllers();
 
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
@@ -37,6 +31,8 @@ builder.Services.AddCors(option =>
 
     });
 });
+
+IConfiguration Configuration = builder.Configuration;
 
 builder.Services.AddApplication();
 builder.Services.AddPersistence(Configuration);

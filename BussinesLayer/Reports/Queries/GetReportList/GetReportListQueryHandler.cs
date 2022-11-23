@@ -3,6 +3,8 @@ using AutoMapper.QueryableExtensions;
 using DbLayer.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
+using System.Threading;
+using System.Threading.Tasks;
 
 namespace BussinesLayer.Reports.Queries.GetReportList
 {
