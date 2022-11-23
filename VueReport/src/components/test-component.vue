@@ -31,24 +31,5 @@
                 password: '',
             }
         },
-        created() {
-            this.fetchData();
-        },
-        watch:
-        {
-            '$route': 'fetchData'
-        },
-        methods: {
-            fetchData() {
-                fetch('/user')
-                    .then(r => r.json())
-                    .then(json => {
-                        this.login = json.login;
-                        this.password = json.password;
-                        return;
-                    }
-                )
-            }
-        },
     }
 </script>

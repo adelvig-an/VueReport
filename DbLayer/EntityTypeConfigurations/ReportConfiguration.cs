@@ -9,9 +9,8 @@ namespace DbLayer.EntityTypeConfigurations
         public void Configure(EntityTypeBuilder<Report> builder) 
         {
             builder.HasKey(report => report.Id);
-            builder.HasIndex(report => report.UserId);
+            builder.HasIndex(report => report.Id).IsUnique();
             builder.Property(report => report.Number).HasMaxLength(10);
-            builder.Property(report => report.CreationDate);
         }
     }
 }
