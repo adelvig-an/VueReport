@@ -17,7 +17,7 @@ namespace VueReportBackend.Controllers
         public ReportController(IMapper mapper) => _mapper = mapper;
 
         [HttpGet]
-        public async Task<ActionResult<ReportListVM>> Getll()
+        public async Task<ActionResult<ReportListVM>> GetAll()
         {
             var query = new GetReportListQuery
             { 

@@ -2,6 +2,7 @@ using System.Reflection;
 using BussinesLayer;
 using BussinesLayer.Common.Mappings;
 using DbLayer;
+using DbLayer.EntityTypeConfigurations;
 using DbLayer.Interfaces;
 using Microsoft.Extensions.Configuration;
 
@@ -32,12 +33,16 @@ builder.Services.AddCors(option =>
     });
 });
 
+builder.Services.AddScoped<IReportDbContext, ApplicationDbContext>();
+
 IConfiguration Configuration = builder.Configuration;
 
 builder.Services.AddApplication();
 builder.Services.AddPersistence(Configuration);
 
-using (var scope = builder.Services.BuildServiceProvider().CreateScope())
+var app = builder.Build();
+
+using (var scope = app.Services.CreateScope())
 {
     var servicesProvider = scope.ServiceProvider;
     try
@@ -48,8 +53,6 @@ using (var scope = builder.Services.BuildServiceProvider().CreateScope())
     catch (Exception exception)
     { }
 }
-
-var app = builder.Build();
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())

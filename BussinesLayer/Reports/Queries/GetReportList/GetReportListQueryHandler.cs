@@ -23,5 +23,7 @@ namespace BussinesLayer.Reports.Queries.GetReportList
 
             return new ReportListVM { Reports = reportQuery };
         }
+
+
     }
 }

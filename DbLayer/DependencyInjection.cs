@@ -10,7 +10,7 @@ namespace DbLayer
         public static IServiceCollection AddPersistence(this IServiceCollection services,
             IConfiguration configuration)
         {
-            var connectionString = configuration["DcConnection"];
+            var connectionString = configuration["DbConnection"];
             services.AddDbContext<ApplicationDbContext>(options =>
             {
                 options.UseSqlite(connectionString);
