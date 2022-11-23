@@ -2,13 +2,18 @@ using System.Reflection;
 using BussinesLayer;
 using BussinesLayer.Common.Mappings;
 using DbLayer;
-using DbLayer.EntityTypeConfigurations;
 using DbLayer.Interfaces;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
 
+IConfiguration Configuration = builder.Configuration;
+
 // Add services to the container.
+builder.Services.AddDbContext<ApplicationDbContext>(option =>
+    option.UseSqlite(builder.Configuration.GetConnectionString("SQLiteDb")
+    ?? throw new InvalidOperationException("Connection string 'ApplicationDbContext' not found.")));
 
 builder.Services.AddControllers();
 
@@ -33,17 +38,14 @@ builder.Services.AddCors(option =>
     });
 });
 
-builder.Services.AddScoped<IReportDbContext, ApplicationDbContext>();
-
-IConfiguration Configuration = builder.Configuration;
-
 builder.Services.AddApplication();
 builder.Services.AddPersistence(Configuration);
 
 var app = builder.Build();
 
-using (var scope = app.Services.CreateScope())
+if (app.Environment.IsDevelopment())
 {
+    using var scope = app.Services.CreateScope();
     var servicesProvider = scope.ServiceProvider;
     try
     {
@@ -51,7 +53,9 @@ using (var scope = app.Services.CreateScope())
         DbInitializer.Initializer(context);
     }
     catch (Exception exception)
-    { }
+    {
+
+    }
 }
 
 // Configure the HTTP request pipeline.
