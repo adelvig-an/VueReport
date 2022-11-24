@@ -4,22 +4,23 @@ using BussinesLayer.Common.Mappings;
 using DbLayer;
 using DbLayer.Interfaces;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Configuration;
 
 var builder = WebApplication.CreateBuilder(args);
-
-// Add services to the container.
-builder.Services.AddControllers();
-
-// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
-builder.Services.AddEndpointsApiExplorer();
-builder.Services.AddSwaggerGen();
 
 builder.Services.AddAutoMapper(config =>
 {
     config.AddProfile(new AssemblyMappingProfile(Assembly.GetExecutingAssembly()));
     config.AddProfile(new AssemblyMappingProfile(typeof(IReportDbContext).Assembly));
 });
+
+// Add services to the container.
+builder.Services.AddApplication();
+builder.Services.AddPersistence(builder.Configuration);
+builder.Services.AddControllers();
+
+// Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
+builder.Services.AddEndpointsApiExplorer();
+builder.Services.AddSwaggerGen();
 
 builder.Services.AddCors(option =>
 {
@@ -31,11 +32,6 @@ builder.Services.AddCors(option =>
 
     });
 });
-
-IConfiguration Configuration = builder.Configuration;
-
-builder.Services.AddApplication();
-builder.Services.AddPersistence(Configuration);
 
 var app = builder.Build();
 

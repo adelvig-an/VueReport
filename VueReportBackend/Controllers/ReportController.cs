@@ -34,7 +34,7 @@ namespace VueReportBackend.Controllers
         {
             var query = new GetReportDetailsQuery
             {
-                UserId= UserId,
+                UserId = UserId,
                 Id = id,
             };
             var vm = await Mediator.Send(query);

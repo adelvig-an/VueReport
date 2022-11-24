@@ -6,9 +6,9 @@ namespace BussinesLayer.Common.Mappings
     public class AssemblyMappingProfile : Profile
     {
         public AssemblyMappingProfile(Assembly assembly) =>
-            AssemblyMappingsFromAssemby(assembly);
+            ApplyMappingsFromAssembly(assembly);
 
-        private void AssemblyMappingsFromAssemby(Assembly assembly)
+        private void ApplyMappingsFromAssembly(Assembly assembly)
         {
             var types = assembly.GetExportedTypes()
                 .Where(type => type.GetInterfaces()

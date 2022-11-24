@@ -10,10 +10,9 @@ namespace DbLayer
         public static IServiceCollection AddPersistence(this IServiceCollection services,
             IConfiguration configuration)
         {
-            var connectionString = configuration["DbConnection"];
             services.AddDbContext<ApplicationDbContext>(options =>
             {
-                options.UseSqlite(connectionString);
+                options.UseSqlite(configuration.GetConnectionString("WebApiDatabase"));
             });
             services.AddScoped<IReportDbContext>(provider => provider.GetService<ApplicationDbContext>());
 
