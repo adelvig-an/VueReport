@@ -1,7 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Model;
 
-namespace DbLayer.Interfaces
+namespace VueReport.Application.Interfaces
 {
     public interface IReportDbContext
     {

@@ -1,6 +1,6 @@
 ﻿using AutoMapper;
 using BussinesLayer.Common.Exceptions;
-using DbLayer.Interfaces;
+using BussinesLayer.Interfaces;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
 using Model;

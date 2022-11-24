@@ -2,8 +2,7 @@ using System.Reflection;
 using BussinesLayer;
 using BussinesLayer.Common.Mappings;
 using DbLayer;
-using DbLayer.Interfaces;
-using Microsoft.EntityFrameworkCore;
+using BussinesLayer.Interfaces;
 
 var builder = WebApplication.CreateBuilder(args);
 

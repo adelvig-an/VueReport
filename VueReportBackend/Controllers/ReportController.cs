@@ -20,7 +20,7 @@ namespace VueReportBackend.Controllers
         public async Task<ActionResult<ReportListVM>> GetAll()
         {
             var query = new GetReportListQuery
-            { 
+            {
                 UserId = UserId,
             };
             

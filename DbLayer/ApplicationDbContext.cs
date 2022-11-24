@@ -1,5 +1,5 @@
 ﻿using DbLayer.EntityTypeConfigurations;
-using DbLayer.Interfaces;
+using BussinesLayer.Interfaces;
 using Microsoft.EntityFrameworkCore;
 using Model;
 
