@@ -3,6 +3,7 @@ using BussinesLayer;
 using BussinesLayer.Common.Mappings;
 using DbLayer;
 using BussinesLayer.Interfaces;
+using VueReportBackend.Middleware;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -62,6 +63,7 @@ app.UseCors(b => {
     b.AllowAnyMethod(); 
 });
 
+app.UseCustomExceptionHandler();
 app.UseRouting();
 app.UseHttpsRedirection();
 app.UseCors("AllowAll");
