@@ -21,7 +21,7 @@ namespace VueReportBackend.Controllers
         {
             var query = new GetReportListQuery
             {
-                UserId = UserId,
+                UserId = 1,
             };
             
             var vm = await Mediator.Send(query);
@@ -30,7 +30,7 @@ namespace VueReportBackend.Controllers
         }
         
         [HttpGet("{id}")]
-        public async Task<ActionResult<ReportDetailsVM>> Get(Guid id)
+        public async Task<ActionResult<ReportDetailsVM>> Get(int id)
         {
             var query = new GetReportDetailsQuery
             {
@@ -61,7 +61,7 @@ namespace VueReportBackend.Controllers
         }
 
         [HttpDelete("{id}")]
-        public async Task<IActionResult> Delete(Guid id)
+        public async Task<IActionResult> Delete(int id)
         {
             var command = new DeleteReportCommand
             { 

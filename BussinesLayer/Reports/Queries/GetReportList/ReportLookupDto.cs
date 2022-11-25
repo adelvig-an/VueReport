@@ -6,7 +6,7 @@ namespace BussinesLayer.Reports.Queries.GetReportList
 {
     public class ReportLookupDto : IMapWith<Report>
     {
-        public Guid Id { get; set; }
+        public int Id { get; set; }
         public string Number { get; set; }
 
         public void Mapping(Profile profile)

@@ -7,9 +7,10 @@ using System.Threading.Tasks;
 
 namespace BussinesLayer.Reports.Commands.CreateReport
 {
-    public class CreateReportCommand : IRequest<Guid>
+    public class CreateReportCommand : IRequest<int>
     {
-        public Guid UserId { get; set; }
+        public int Id { get; set; }
+        public int UserId { get; set; }
         public string Number { get; set; }
     }
 }

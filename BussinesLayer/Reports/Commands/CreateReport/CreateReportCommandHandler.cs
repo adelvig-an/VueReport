@@ -5,19 +5,19 @@ using Model;
 namespace BussinesLayer.Reports.Commands.CreateReport
 {
     public class CreateReportCommandHandler 
-        : IRequestHandler<CreateReportCommand, Guid>
+        : IRequestHandler<CreateReportCommand, int>
     {
         private readonly IReportDbContext _dbContext;
         public CreateReportCommandHandler(IReportDbContext dbContext) =>
             _dbContext = dbContext;
-        public async Task<Guid> Handle(CreateReportCommand request,
+        public async Task<int> Handle(CreateReportCommand request,
             CancellationToken cancellationToken)
         {
             var report = new Report
             {
                 UserId = request.UserId,
                 Number = request.Number,
-                Id = Guid.NewGuid(),
+                Id = request.Id,
                 CreationDate = DateTime.Now
             };
 

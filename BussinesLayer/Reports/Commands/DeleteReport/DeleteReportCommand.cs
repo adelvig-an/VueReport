@@ -9,7 +9,7 @@ namespace BussinesLayer.Reports.Commands.DeleteReport
 {
     public class DeleteReportCommand : IRequest
     {
-        public Guid UserId { get; set; }
-        public Guid Id { get; set; }
+        public int UserId { get; set; }
+        public int Id { get; set; }
     }
 }
